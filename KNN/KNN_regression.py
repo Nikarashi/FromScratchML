@@ -26,7 +26,7 @@ class KnnRegressor:
             self.distance = np.sqrt(sq_test + sq_train - 2 * np.dot(X, self.X_train.T))
         return self.distance
     
-    def predict_values(self):
+    def __predict_values(self):
         n_test = self.distance.shape[0]
         y_pred = np.zeros((n_test))
 

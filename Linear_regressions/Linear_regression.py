@@ -11,20 +11,3 @@ class Analytical_Linear_Regression:
         y_pred = X_test.dot(self.weights)
         return y_pred
         
-
-
-import numpy as np
-
-# Пример данных
-X_train = np.array([[1, 2], [2, 3], [3, 4]])
-y_train = np.array([5, 7, 9])
-
-X_test = np.array([[4, 5], [5, 6]])
-
-# Создаем объект модели и обучаем ее
-model = Analytical_Linear_Regression()
-model.fit(X_train, y_train)
-
-# Предсказываем на новых данных
-predictions = model.predict(X_test)
-print(predictions)

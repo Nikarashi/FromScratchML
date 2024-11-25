@@ -13,5 +13,3 @@ class Analytical_Linear_Regression:
     def predict(self, X_test):
         X_test = np.insert(X_test, 0, 1, axis=1)
         return X_test.dot(self.wieghts)
-
-

@@ -17,8 +17,9 @@ class MatrixLinearRegression:
 
 class LinearRegressionGD :
 
-    def __init__(self, lr=0.01):
+    def __init__(self, lr=0.01, max_iter = 100):
         self.lr = lr
+        self.max_iter = max_iter
 
     def fit(self, X_train, y_train):
         X_train = np.insert(X_train, 0, 1, axis=1)
@@ -31,10 +32,9 @@ class LinearRegressionGD :
     def __gradient_descent(self, X_train, y_train):
         self.weights = np.random.normal(size=X_train.shape[1])
         n = X_train.shape[0]
-        diff = 10000
-        err = 1e10
 
-        while np.linalg.norm(err) > diff:
+
+        for i in range(self.max_iter):
             xw = X_train.dot(self.weights)
             err = xw-y_train
             gradient = 2 * X_train.T.dot(err)/n

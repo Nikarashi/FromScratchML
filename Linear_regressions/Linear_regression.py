@@ -34,7 +34,7 @@ class LinearRegressionGD :
         n = X_train.shape[0]
 
 
-        for i in range(self.max_iter):
+        for _ in range(self.max_iter):
             xw = X_train.dot(self.weights)
             err = xw-y_train
             gradient = 2 * X_train.T.dot(err)/n
